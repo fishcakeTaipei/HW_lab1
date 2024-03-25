@@ -6,13 +6,13 @@
 Code：
 ```js
 import requests
-import json  # 導入 json 模組
+import json  
 
 curl = "https://ntnu-ml.openai.azure.com/openai/deployments/ntnu-ml-gpt4-32k/chat/completions?api-version=2024-02-15-preview"
 
 headers = {
     "Content-Type": "application/json",
-    "api-key": "7c196b48c6c14f25adc5a8d7dcbc8d02"   # 使用老師的 API Key1
+    "api-key": "7c196b48c6c14f25adc5a8d7dcbc8d02"   # 使用老師的API Key
 }
 
 data = {
@@ -29,11 +29,9 @@ data = {
 }
 
 response = requests.post(curl, json=data, headers=headers)
-
-# 解析回應的 JSON 格式資料
 response_data = response.json()
 
-# 嘗試提取 restaurantId 的資料
+# 嘗試提取restaurantId的資料
 restaurant_ids = []
 for choice in response_data["choices"]:
     message_content = choice["message"]["content"]
@@ -42,7 +40,7 @@ for choice in response_data["choices"]:
         for recommendation in json_content:
             restaurant_ids.extend(recommendation.get('recommendations', []))
 
-# 輸出提取到的 restaurantId
+# 輸出提取到的restaurantId
 print("提取到的 restaurantId:", restaurant_ids)
 
 # 輸出完整的回應資料
