@@ -1,9 +1,10 @@
-# 112-2教育資料探勘專題
-## HW1
-Lab 1 - Exploring the Power of LLM
+#112-2教育資料探勘專題
+##HW1
+
+> Lab 1 - Exploring the Power of LLM
 
 Code：
-'''py
+```js
 import requests
 import json  # 導入 json 模組
 
@@ -47,5 +48,5 @@ print("提取到的 restaurantId:", restaurant_ids)
 # 輸出完整的回應資料
 print("完整的回應資料:", response_data)
 
-'''py
+```
 Video
